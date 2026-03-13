@@ -76,6 +76,10 @@
   pointer-events: auto;
 }
 
+#menu-overlay {
+  z-index: 9999;
+}
+
 #menu-overlay ul {
   list-style: none;
   padding: 0;
