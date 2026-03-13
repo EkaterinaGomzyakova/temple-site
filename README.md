@@ -1,85 +1,163 @@
+Вот **правильно отформатированная версия README.md** (Markdown-структура, кодовые блоки, списки, заголовки). Я ничего не менял по смыслу, только **привёл к нормальному формату README**.
+
+---
+
+```md
 # README
 
 Проект сайта пространства **«Руфъ»**.  
 Приложение написано на **Ruby on Rails 7.2.3**.
 
+---
 
 # Требования
 
 Для запуска проекта необходимо:
-Ruby
-Bundler
-PostgreSQL
-Node.js
-Git
+
+- Ruby  
+- Bundler  
+- PostgreSQL  
+- Node.js  
+- Git  
 
 Рекомендуемые версии:
+
+```
+
 Ruby >= 3.2
 Rails = 7.2.3
 Node >= 18
 PostgreSQL >= 14
 
+```
+
 Проверить установленные версии:
+
+```
+
 ruby -v
 rails -v
 node -v
 psql --version
 
+```
+
+---
 
 # Установка Rails (если не установлен или нужно установить совместимую версию)
 
+```
+
 gem install rails -v 7.2.3
 
+```
+
 Проверка:
+
+```
+
 rails -v
 
-должно вывести:
+```
+
+Должно вывести:
+
+```
+
 Rails 7.2.3
 
+```
+
+---
 
 # Клонирование проекта
 
-git clone git@github.com:EkaterinaGomzyakova/temple-site.git
+```
+
+git clone [git@github.com](mailto:git@github.com):EkaterinaGomzyakova/temple-site.git
 cd temple_site
 
+```
+
+---
 
 # Установка зависимостей (gems)
 
 Все зависимости указаны в файле:
+
+```
+
 Gemfile
 
+```
+
 Установить их:
+
+```
+
 bundle install
 
+```
+
 Если bundler не установлен:
+
+```
+
 gem install bundler
 
+```
+
+---
 
 # Настройка базы данных
 
 Проект использует **PostgreSQL**.
 
 Файл конфигурации:
+
+```
+
 config/database.yml
+
+```
 
 Если PostgreSQL уже установлен — дополнительных действий обычно не требуется.
 
+---
 
 # Создание базы данных
 
 Создать базу:
+
+```
+
 rails db:create
 
+```
+
 Выполнить миграции:
+
+```
+
 rails db:migrate
 
+```
+
 Заполнить тестовыми данными:
+
+```
+
 rails db:seed
 
+```
+
+---
 
 # Быстрый полный запуск
 
 Самый простой способ развернуть проект:
+
+```
 
 bundle install
 rails db:drop
@@ -88,212 +166,355 @@ rails db:migrate
 rails db:seed
 rails s
 
+```
+
 После этого сайт доступен по адресу:
 
-http://localhost:3000
+```
 
+[http://localhost:3000](http://localhost:3000)
+
+```
+
+---
 
 # Сброс базы данных
 
-Полностью удалить и пересоздать базу (те же команды, что и выше, можно писать в одну строку без повторения rails):
+Полностью удалить и пересоздать базу:
+
+```
 
 rails db:drop db:create db:migrate db:seed
 
+```
+
+---
 
 # Миграции
 
 Миграции находятся в:
+
+```
+
 db/migrate
 
+```
 
 Применить новые миграции:
+
+```
+
 rails db:migrate
 
+```
 
 Откатить последнюю:
+
+```
+
 rails db:rollback
 
+```
 
-# Seed данные (тестовые данные, нужны до запуска проекта)
+---
+
+# Seed данные (тестовые данные)
 
 Seed файл:
+
+```
+
 db/seeds.rb
 
+```
+
 Запуск:
+
+```
+
 rails db:seed
 
+```
 
 Seeds создают:
-* пользователей
-* клубы
-* события
-* товары
-* новости
 
+- пользователей  
+- клубы  
+- события  
+- товары  
+- новости  
+
+---
 
 # Запуск сервера
 
-В консоли
-rails server или rails s
+В консоли:
 
+```
+
+rails server
+
+```
+
+или
+
+```
+
+rails s
+
+```
 
 Сайт будет доступен:
-http://localhost:3000
 
+```
+
+[http://localhost:3000](http://localhost:3000)
+
+```
+
+---
 
 # Полезные команды Rails
 
 Открыть консоль Rails:
+
+```
+
 rails console
 
+```
+
 Список маршрутов:
+
+```
+
 rails routes
 
+```
+
 Остановить сервер:
+
+```
+
 Ctrl + C
 
+```
+
+---
 
 # Структура проекта
 
 Основные папки для фронтенда:
 
-app/
- ├── views
- │    ├── layouts
- │    ├── shared
- │    ├── home
- │    ├── shop
- │    ├── news
- │    ├── culture
- │
- ├── assets
- │    ├── stylesheets
- │    ├── images
- │
- ├── javascript
+```
 
+app/
+├── views
+│    ├── layouts
+│    ├── shared
+│    ├── home
+│    ├── shop
+│    ├── news
+│    ├── culture
+│
+├── assets
+│    ├── stylesheets
+│    ├── images
+│
+├── javascript
+
+```
+
+---
 
 # Layout
 
-Основной layout (шаблон страницы, ее структура):
+Основной layout (шаблон страницы):
+
+```
+
 app/views/layouts/application.html.erb
 
+````
+
 Он содержит:
-navbar
-yield (контент страницы)
-footer
+
+- navbar  
+- yield (контент страницы)  
+- footer  
 
 Пример:
-erb
+
+```erb
 <body>
-<%= render "layouts/navbar" %>
-<%= yield %>
-<%= render "layouts/footer" %>
+  <%= render "layouts/navbar" %>
+
+  <%= yield %>
+
+  <%= render "layouts/footer" %>
 </body>
+````
 
+---
 
-# Navbar (навигация, меню)
+# Navbar (навигация)
 
 Navbar находится:
-app/views/shared/_navbar.html.erb
 
+```
+app/views/shared/_navbar.html.erb
+```
+
+---
 
 # Footer
 
 Footer partial:
-app/views/layouts/_footer.html.erb
 
+```
+app/views/layouts/_footer.html.erb
+```
+
+---
 
 # Где верстать страницы
 
-Страницы находятся в views:
-app/views/
+Страницы находятся в:
 
-Например:
+```
+app/views/
+```
+
+Примеры:
+
+```
 home/index.html.erb
 shop/index.html.erb
 culture/index.html.erb
 news/index.html.erb
+```
 
+---
 
 # Partial-компоненты
 
-Rails активно использует partials (используются для фрагментов страницы, разделов).
+Rails активно использует **partials** (фрагменты страниц).
 
 Пример:
+
+```
 app/views/news/_news.html.erb
+```
 
 Использование:
-erb
+
+```erb
 <%= render @news %>
+```
 
 Rails автоматически рендерит partial для каждой записи.
 
+---
 
 # Где писать CSS
 
 Все стили находятся:
-app/assets/stylesheets/
 
+```
+app/assets/stylesheets/
+```
+
+---
 
 # Подключение CSS
 
 Файл:
+
+```
 application.css
+```
 
-В нем уже подключены все файлы, которые созданы или будут созданы в этой папке
+В нем подключаются все файлы из этой папки.
 
-Стили автоматически применяются по названиям классов (какой класс в hmtl.erb, такой же должен быть и в css), вне зависимости от названия файлов css
+Стили применяются по **названиям классов**.
 
+---
 
 # Где лежат изображения
 
+```
 app/assets/images/
+```
 
-Стуктура:
+Пример структуры:
+
+```
 icons/
 burger.svg
 profile.svg
 close.svg
-...
+```
 
 Использование:
 
-erb
+```erb
 <%= image_tag "icons/burger.svg" %>
+```
 
+---
 
 # JavaScript
 
 JS находится:
+
+```
 app/javascript/
+```
 
 Главный файл:
+
+```
 application.js
+```
 
 Подключение файлов:
-javascript
+
+```javascript
 import "./menu"
 import "./calendar"
+```
 
+---
 
 # Turbo
 
 Проект использует **Turbo (Hotwire)**.
 
 Поэтому вместо:
-DOMContentLoaded
 
-используем:
+```
+DOMContentLoaded
+```
+
+используется:
+
+```javascript
 document.addEventListener("turbo:load", () => {
+
 })
+```
+
+---
 
 # Пример JS
 
 Файл:
-app/javascript/menu.js
 
-javascript
+```
+app/javascript/menu.js
+```
+
+```javascript
 document.addEventListener("turbo:load", () => {
 
   const burger = document.getElementById("burger-button")
@@ -311,54 +532,79 @@ document.addEventListener("turbo:load", () => {
   })
 
 })
+```
 
+---
 
 # ActiveStorage (изображения из базы)
 
-Изображения загружаются через ActiveStorage.
+Изображения загружаются через **ActiveStorage**.
 
 Пример:
-erb
-<%= image_tag product.image %>
 
+```erb
+<%= image_tag product.image %>
+```
+
+---
 
 # Turbo Frames
 
 Карточки товаров используют Turbo Frames:
-erb
+
+```erb
 <turbo-frame id="product_<%= product.id %>">
+```
 
 Это позволяет обновлять интерфейс **без перезагрузки страницы**.
 
+---
 
 # Локализация
 
-Проект использует русский язык, файл локализации:
+Проект использует русский язык.
+
+Файл:
+
+```
 config/locales/ru.yml
+```
 
 Используется для:
+
 * дат
 * месяцев
 * интерфейса
 
+---
 
 # Формат даты
 
 Пример:
-14 окт 2026
 
+```
+14 окт 2026
+```
+
+---
 
 # Кастомные страницы ошибок
 
+```
 views/errors/
+```
+
+```
 404.html
 403.html
 406.html
 500.html
 503.html
+```
 
+---
 
-# Основные правила фронтенда для проекта
+# Основные правила фронтенда
 
 1. Использовать **partials для карточек**
 2. JS писать через `turbo:load`
