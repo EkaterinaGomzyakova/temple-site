@@ -1,0 +1,71 @@
+<turbo-frame id="product_<%= product.id %>">
+
+<div class="product-card">
+
+  <div class="product-image-container">
+
+    <% if product.image.attached? %>
+      <%= image_tag product.image, class: "product-image" %>
+    <% end %>
+
+    <% cart_item = current_user.cart_items.find_by(product_id: product.id) if user_signed_in? %>
+
+    <div class="cart-controls">
+
+      <% if user_signed_in? %>
+
+        <% if cart_item %>
+
+          <div class="cart-counter">
+
+            <%= button_to "-",
+            cart_item_path(cart_item),
+            method: :patch,
+            params: { quantity: cart_item.quantity - 1 },
+            class: "cart-minus" %>
+
+            <span class="cart-quantity">
+              <%= cart_item.quantity %>
+            </span>
+
+            <%= button_to "+",
+            cart_item_path(cart_item),
+            method: :patch,
+            params: { quantity: cart_item.quantity + 1 },
+            class: "cart-plus" %>
+
+          </div>
+
+        <% else %>
+
+          <%= button_to "В корзину",
+          cart_items_path,
+          method: :post,
+          params: { product_id: product.id },
+          class: "add-to-cart-button" %>
+
+        <% end %>
+
+      <% else %>
+
+        <%= link_to "Войти",
+        new_user_session_path,
+        class: "add-to-cart-button" %>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+  <div class="product-name">
+    <%= product.name %>
+  </div>
+
+  <div class="product-price">
+    <%= number_to_currency(product.price, unit: "₽") %>
+  </div>
+
+</div>
+
+</turbo-frame>

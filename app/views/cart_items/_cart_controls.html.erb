@@ -1,0 +1,25 @@
+<% cart_item = current_user.cart_items.find_by(product_id: product.id) %>
+
+<% if cart_item %>
+  <div class="cart-counter">
+    <%= button_to "-", cart_items_update_quantity_path,
+      method: :patch,
+      params: { product_id: product.id, quantity: cart_item.quantity - 1 },
+      class: "cart-minus",
+      form: { "data-turbo-frame": "cart_item_#{product.id}" } %>
+
+    <span class="cart-quantity"><%= cart_item.quantity %></span>
+
+    <%= button_to "+", cart_items_update_quantity_path,
+      method: :patch,
+      params: { product_id: product.id, quantity: cart_item.quantity + 1 },
+      class: "cart-plus",
+      form: { "data-turbo-frame": "cart_item_#{product.id}" } %>
+  </div>
+<% else %>
+  <%= button_to "В корзину", cart_items_path,
+    method: :post,
+    params: { product_id: product.id },
+    class: "add-to-cart-button",
+    form: { "data-turbo-frame": "cart_item_#{product.id}" } %>
+<% end %>

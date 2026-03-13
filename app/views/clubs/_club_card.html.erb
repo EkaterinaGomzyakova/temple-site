@@ -1,0 +1,25 @@
+<div class="club-card">
+
+  <h2 class="club-title">
+    <%= club.name %>
+  </h2>
+
+  <div class="club-images">
+
+    <% if club.image.attached? %>
+
+        <%= image_tag image, class: "club-image" %>
+
+    <% end %>
+
+  </div>
+
+  <p class="club-description">
+    <%= club.description %>
+  </p>
+
+  <%= link_to "Подробнее",
+      club_path(club),
+      class: "club-link" %>
+
+</div>

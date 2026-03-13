@@ -1,0 +1,20 @@
+<div class="page-hero">
+
+  <h1 class="page-title">Лавка</h1>
+
+  <p class="page-description">
+    Место, где можно приобрести свечи, иконы, просфоры, духовную литературу и изделия мастерских прихода.
+    Доход направляем на служение и благотворительные проекты.
+  </p>
+
+</div>
+
+<div class="products-grid">
+
+  <% @products.each do |product| %>
+
+    <%= render "products/product_card", product: product %>
+
+  <% end %>
+
+</div>

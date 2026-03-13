@@ -1,0 +1,5 @@
+.site-footer {
+  border-radius: 100px;
+  background: var(--sections-color);
+  padding: 60px 80px;
+}

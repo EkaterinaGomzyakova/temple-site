@@ -1,0 +1,66 @@
+/* Сетка товаров */
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.product-card {
+  width: 250px;
+}
+
+.product-image-container {
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  display: block;
+}
+
+/* кнопка появляется при hover */
+
+.cart-controls {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.add-to-cart-button {
+  height: 40px;
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.product-image-container:hover .add-to-cart-button {
+  opacity: 1;
+}
+
+/* счетчик */
+
+.cart-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: black;
+  color: white;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.cart-counter button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

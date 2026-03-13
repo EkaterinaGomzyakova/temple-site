@@ -1,0 +1,40 @@
+<h1>Оформление заказа</h1>
+
+<% if @cart_items.any? %>
+
+  <% @cart_items.each do |item| %>
+
+    <div class="cart-item">
+
+      <% if item.product.image.attached? %>
+        <%= image_tag item.product.image, width: 80 %>
+      <% end %>
+
+      <div>
+        <strong><%= item.product.name %></strong>
+
+        <div class="cart-counter">
+
+          <%= button_to "-", cart_item_path(item),
+          method: :patch,
+          params: { quantity: item.quantity - 1 } %>
+
+          <span><%= item.quantity %></span>
+
+          <%= button_to "+", cart_item_path(item),
+          method: :patch,
+          params: { quantity: item.quantity + 1 } %>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <% end %>
+
+<% else %>
+
+  <p>Корзина пуста</p>
+
+<% end %>

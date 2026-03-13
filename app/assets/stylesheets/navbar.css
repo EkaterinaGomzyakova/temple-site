@@ -1,0 +1,104 @@
+/* Стили для меню (навбар - закрытое, меню - открытое) */
+.navbar {
+  position: relative;
+  padding: 36px 48px;
+  border-radius: 64px;
+  background: var(--sections-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* центр логотипа */
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* логотип */
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* иконка профиля */
+
+.avatar-icon {
+  height: 32px;
+  width: 32px;
+}
+
+
+
+#menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--sections-color);
+  display: none; /* по умолчанию скрыто */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#menu-overlay.hidden {
+  display: none;
+}
+
+#menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+#menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#menu-overlay ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#menu-overlay ul li {
+  margin: 20px 0;
+  font-size: 62px;
+}
+
+
+.burger-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}

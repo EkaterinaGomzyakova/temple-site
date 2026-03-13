@@ -1,0 +1,28 @@
+.error-page{
+  height:80vh;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+}
+
+.error-code{
+  font-size:220px;
+}
+
+.error-description{
+  width:420px;
+  font-size: 20px;
+}
+
+.error-button{
+  background:black;
+  color:white;
+
+  padding:12px 24px;
+
+  text-decoration:none;
+}

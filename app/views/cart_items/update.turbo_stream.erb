@@ -1,0 +1,13 @@
+<turbo-stream target="product_<%= @product.id %>" action="replace">
+  <template>
+    <%= render "products/product_card", product: @product %>
+  </template>
+</turbo-stream>
+
+<turbo-stream target="cart_count" action="replace">
+  <template>
+    <span class="cart-count">
+      <%= current_user.cart_items.sum(:quantity) %>
+    </span>
+  </template>
+</turbo-stream>

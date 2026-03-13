@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Temple Site" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav class="navbar">
+
+      <div class="nav-left">
+        <%= image_tag "icons/burger.svg", id: "burger-button" %>
+      </div>
+
+      <div class="nav-center">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png", class: "nav-logo" %>
+        <% end %>
+      </div>
+
+      <div class="nav-right">
+
+        <% if user_signed_in? %>
+
+          <%= link_to cart_items_path do %>
+            <div class="cart-icon">
+              🛒
+              <span class="cart-count"><%= current_user.cart_items.count %></span>
+            </div>
+          <% end %>
+
+          <%= link_to edit_user_registration_path do %>
+
+            <% if current_user.profile&.avatar&.attached? %>
+              <%= image_tag current_user.profile.avatar, class: "avatar-icon" %>
+            <% else %>
+              <%= image_tag "icons/profile.svg", class: "avatar-icon" %>
+            <% end %>
+
+          <% end %>
+
+        <% else %>
+
+          <%= link_to new_user_session_path do %>
+            <%= image_tag "icons/profile.svg", class: "avatar-icon" %>
+          <% end %>
+
+        <% end %>
+
+      </div>
+
+    </nav>
+
+<%= render "layouts/menu" %>
+
+<%= yield %>
+
+<%= render "layouts/footer" %>
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+/* Стили для корзины */
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.cart-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-minus, .cart-plus, .cart-remove {
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

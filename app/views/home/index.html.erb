@@ -1,0 +1,158 @@
+<section class="ruf-section">
+
+  <div class="ruf-hero">
+
+    <h1 class="ruf-title">
+      Руфъ
+    </h1>
+
+    <p class="ruf-description">
+      Объединение близких по духу людей, прихожан Храма Святителя Николая
+      на Трёх Горах и их друзей
+    </p>
+
+  </div>
+
+
+  <div class="ruf-gallery">
+
+    <div class="ruf-track">
+
+
+        <%= image_tag "ruf/1.jpg", class: "ruf-image" %>
+        <%= image_tag "ruf/2.jpg", class: "ruf-image" %>
+        <%= image_tag "ruf/3.jpg", class: "ruf-image" %>
+        <%= image_tag "ruf/4.jpg", class: "ruf-image" %>
+
+      <!-- дублируем для бесконечной анимации -->
+
+
+        <%= image_tag "ruf/1.jpg", class: "ruf-image" %>
+        <%= image_tag "ruf/2.jpg", class: "ruf-image" %>
+        <%= image_tag "ruf/3.jpg", class: "ruf-image" %>
+        <%= image_tag "ruf/4.jpg", class: "ruf-image" %>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="calendar-section">
+  <div class="calendar-date-large">
+    <%= @date.strftime("%d") %>
+  </div>
+
+  <div class="calendar-week">
+    <% @week_days.each do |day| %>
+      <div class="calendar-day">
+        <div class="day-name"><%= I18n.t("date.abbr_day_names")[day.wday] %></div>
+        <div class="day-number"><%= day.day %></div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="calendar-navigation">
+    <%= link_to "<", home_path(date: @date - 7.days), data: { turbo_frame: "events-frame" }, class: "nav-arrow" %>
+    <%= link_to ">", home_path(date: @date + 7.days), data: { turbo_frame: "events-frame" }, class: "nav-arrow" %>
+  </div>
+
+  <div class="calendar-filters">
+    <% @club_names.each do |club_name| %>
+      <%= link_to club_name.upcase,
+                  home_path(date: @date, club: club_name),
+                  data: { turbo_frame: "events-frame" },
+                  class: "filter-button" %>
+    <% end %>
+  </div>
+
+  <%= turbo_frame_tag "events-frame" do %>
+    <div class="club-events-grid">
+      <% @club_events.each do |event| %>
+        <div class="club-event-card">
+          <% if event.club.image.attached? %>
+            <%= image_tag event.club.image, class: "club-event-image" %>
+          <% end %>
+          <h3 class="club-event-title"><%= event.club.name %></h3>
+          <p class="club-event-desc"><%= event.title %></p>
+          <%= link_to "Подробнее", event_path(event), class: "club-event-link" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</section>
+
+<section class="cultural-space-section">
+  <div class="section-content">
+    <h2 class="section-title">Культурное пространство</h2>
+    <p class="section-description">
+      Поддерживаем молодых авторов и даём сцену зрелым мастерам, соединяя традицию христианской культуры с языком современного искусства
+    </p>
+    <%= link_to "Подробнее", culture_path, class: "section-button" %>
+  </div>
+</section>
+
+<section class="community-news-section">
+  <div class="section-content">
+    <h2 class="section-title">Новости сообщества</h2>
+    <%= link_to "Подробнее", news_index_path, class: "section-button" %>
+
+    <div class="news-grid">
+        <% @latest_news.each do |news_item| %>
+            <div class="news-card">
+            <div class="news-header">
+                <h3 class="news-title"><%= news_item.title %></h3>
+                <% news_date = news_item.created_at %>
+                <span class="news-date">
+                <%= news_date.day %> 
+                <%= I18n.t('date.abbr_month_names')[news_date.month] %> 
+                <%= news_date.year %>
+                </span>
+            </div>
+            <p class="news-excerpt"><%= truncate(strip_tags(news_item.content), length: 120) %></p>
+            <%= link_to "Подробнее", news_path(news_item), class: "news-read-more" %>
+            </div>
+        <% end %>
+    </div>
+  </div>
+  </section>
+
+<section class="section-values">
+  <div class="section-container">
+    <h2 class="section-title">Наши ценности</h2>
+
+    <div class="values-content">
+      <div class="value-item">
+        <h3 class="value-name">Профессионализм</h3>
+        <p class="value-description">
+          01
+        </p>
+      </div>
+
+      <div class="value-item">
+        <h3 class="value-name">Добровольчество и открытость</h3>
+        <p class="value-description">
+          02
+        </p>
+      </div>
+
+      <div class="value-item">
+        <h3 class="value-name">Традиции</h3>
+        <p class="value-description">
+          03
+        </p>
+      </div>
+
+    </div>
+</section>
+
+<section class="section-help">
+  <div class="section-container">
+    <h2 class="section-title">Хотите помочь?</h2>
+
+    <p class="help-text">
+      Вы можете: (1) стать волонтёром, (2) поддержать донейшеном, (3) привести партнёров
+    </p>
+  </div>
+</section>

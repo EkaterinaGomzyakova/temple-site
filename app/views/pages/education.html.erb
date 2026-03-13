@@ -1,0 +1,19 @@
+<div class="page-hero">
+
+  <h1 class="page-title">Центр образования</h1>
+
+  <p class="page-description">
+    Место, где дети, подростки и взрослые растут, учатся и узнают Церковь
+    через опыт, игру, общение и служение
+  </p>
+
+</div>
+
+
+<div class="clubs-section">
+
+  <% @clubs.each do |club| %>
+    <%= render "clubs/club_card", club: club %>
+  <% end %>
+
+</div>

@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  start_time: 2026-03-10 16:10:30
+  location: MyString
+  price: 9.99
+  capacity: 1
+  has_registration: false
+  external_registration_url: MyString
+  event_type: 1
+  club: one
+  slug: MyString
+  created_by: one
+  is_published: false
+  archived_at: 2026-03-10 16:10:30
+  deleted_at: 2026-03-10 16:10:30
+
+two:
+  title: MyString
+  description: MyText
+  start_time: 2026-03-10 16:10:30
+  location: MyString
+  price: 9.99
+  capacity: 1
+  has_registration: false
+  external_registration_url: MyString
+  event_type: 1
+  club: two
+  slug: MyString
+  created_by: two
+  is_published: false
+  archived_at: 2026-03-10 16:10:30
+  deleted_at: 2026-03-10 16:10:30

@@ -1,0 +1,38 @@
+/* Общие стили, повторяющиеся во всем сайте */
+
+body {
+  background-color: var(--site-bg-color);
+}
+
+section {
+  border-radius: 100px;
+  background: var(--sections-color);
+  margin-top: 1px;
+}
+
+.page-hero {
+  margin-top: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 190px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 150px;
+  margin: 0 auto;
+}
+
+.page-description {
+  font-size: 20px;
+  max-width: 510px;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+

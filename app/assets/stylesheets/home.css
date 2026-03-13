@@ -1,0 +1,195 @@
+.ruf-section{
+
+  background:white;
+
+  padding-top:125px;
+  padding-bottom:140px;
+
+}
+
+/* текст */
+
+.ruf-hero{
+
+  margin-left:120px;
+  margin-bottom:80px;
+
+}
+
+.ruf-title{
+
+  font-size:190px;
+  line-height:0.9;
+
+}
+
+.ruf-description{
+
+  font-size:20px;
+  width:520px;
+
+}
+
+/* галерея, анимация картинок на 1 экране */
+
+.ruf-gallery{
+
+  overflow:hidden;
+  width:100%;
+
+}
+
+.ruf-track{
+
+  display:flex;
+  gap: 12px;
+
+  animation:ruf-scroll 40s linear infinite;
+
+}
+
+.ruf-image{
+
+  height: 233px;
+
+}
+
+/* анимация */
+
+@keyframes ruf-scroll{
+
+  0%{
+    transform:translateX(0);
+  }
+
+  100%{
+    transform:translateX(-50%);
+  }
+
+}
+
+.cultural-space-section {
+  background-color: #ffffff; /* белый фон */
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.cultural-space-section .section-title {
+  font-size: 150px; /* крупный заголовок */
+  line-height: 1.1;
+}
+
+.cultural-space-section .section-description {
+  font-size: 20px; /* описание */
+  max-width: 510px;
+  margin: 0 auto 40px; /* центрируем текст и отступ снизу */
+}
+
+.cultural-space-section .section-button {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.community-news-section {
+  background-color: #ffffff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.community-news-section .section-description {
+  font-size: 20px;
+  max-width: 510px;
+}
+
+.community-news-section .section-button {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 84px;
+}
+
+.news-card {
+  padding: 15px;
+}
+
+.news-card .news-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.news-card .news-title {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.news-card .news-excerpt {
+  font-size: 16px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.news-card .news-read-more {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.news-card .news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.news-card .news-date {
+  font-size: 14px;
+}
+
+.section-values .values-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.section-values .value-item {
+  text-align: center;
+}
+
+.section-values .value-name {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.section-values .value-description {
+  font-size: 18px;
+}
+
+.section-help {
+  background-color: #ffffff; /* белый фон */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-help .section-title {
+  font-size: 150px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.section-help .help-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333333;
+}

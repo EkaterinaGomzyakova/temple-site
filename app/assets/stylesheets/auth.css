@@ -1,0 +1,55 @@
+/* Регистрация и вход */
+
+.auth-page{
+  width:420px;
+  margin:120px auto;
+  text-align:center;
+}
+
+.auth-title{
+  font-size:48px;
+  margin-bottom:40px;
+}
+
+.auth-field{
+  margin-bottom:20px;
+  text-align:left;
+}
+
+.auth-field input{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+}
+
+.auth-button{
+  width:100%;
+  padding:14px;
+  background:black;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+.auth-remember{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+.auth-links{
+  margin-top:20px;
+  font-size:14px;
+}
+
+.auth-links a{
+  color:black;
+  text-decoration:underline;
+}
+
+.auth-hint{
+  font-size:14px;
+  opacity:0.6;
+  margin-bottom:5px;
+}

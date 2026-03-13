@@ -1,0 +1,6 @@
+{
+  "name": "Temple",
+  "short_name": "Temple",
+  "start_url": "/",
+  "display": "standalone"
+}
