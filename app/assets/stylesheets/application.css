@@ -49,3 +49,7 @@ h3 {
 p {
   font-family: "Zapus-Sans";
 }
+
+body{
+  margin: 0;
+}
