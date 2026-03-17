@@ -193,3 +193,42 @@
   margin-bottom: 20px;
   color: #333333;
 }
+
+
+@font-face {
+  font-family: "Onest";
+  src: url("/assets/Onest-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT-Ricordi-Greto";
+  src: url('/assets/TT_Ricordi_Greto_Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+ @font-face {
+  font-family: "Zapus-Sans";
+  src: url("/assets/ZapusSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "TT-Ricordi-Greto";
+}
+
+h2 {
+  font-family: "TT-Ricordi-Greto";
+}
+
+h3 {
+  font-family: "Onest";
+}
+
+p {
+  font-family: "Zapus-Sans";
+}
+
