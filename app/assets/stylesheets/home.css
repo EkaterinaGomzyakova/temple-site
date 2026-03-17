@@ -2,8 +2,9 @@
 
   background:white;
 
-  padding-top:125px;
-  padding-bottom:140px;
+  padding-top:195px;
+  padding-bottom:0px;
+  border-radius: 64px 64px 0px 0px;
 
 }
 
@@ -11,7 +12,7 @@
 
 .ruf-hero{
 
-  margin-left:120px;
+  margin:120px;
   margin-bottom:80px;
 
 }
@@ -22,15 +23,90 @@
   line-height:0.9;
   color: #222222;
   font-weight: 100;
+  margin-bottom: 0px;
 
 }
 
 .ruf-description{
 
   font-size:20px;
-  width:520px;
+  width:100%;
+  padding: 0px 0px 0px 0px ;
 
 }
+
+.ruf-title-description {
+  text-align: center;
+}
+
+
+
+
+
+.ruf-list {
+  position: relative;
+  top: -150px; /* смещение вверх */
+  font-size: 20px;
+  font-weight: 100;
+  color: #b0b0b0;
+  display: flex;
+  gap: 64%;
+}
+
+.ruf-block {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  gap: 35px;
+}
+.ruf-number,.ruf-text{
+  text-align: center;
+}
+
+.block-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-right: auto;
+}
+
+.block-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.ruf-text {
+  margin: 0;
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* галерея, анимация картинок на 1 экране */
 
