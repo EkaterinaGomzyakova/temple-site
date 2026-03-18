@@ -82,38 +82,15 @@
   width: 200px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* галерея, анимация картинок на 1 экране */
 
 .ruf-gallery{
 
   overflow:hidden;
   width:100%;
+   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -webkit-mask-image: linear-gradient(to right, #ffffff00 5%, black 30%, black 70%, #ffffff00 95%);
 
 }
 
