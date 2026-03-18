@@ -1,3 +1,78 @@
+h1{
+  margin: 0;
+}
+
+.calendar-date-large {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* или left, если нужно по левому краю */
+  margin-bottom: 80px;
+}
+
+.day-row {
+  font-size: 11rem;      /* подберите размер */
+  margin: 0;
+  line-height: 1;
+  font-weight: 200;
+}
+
+.month-name {
+  font-family: "TT-Ricordi-Greto";
+  font-size: 10rem;
+  font-weight: 500;
+}
+
+
+.month-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;          /* расстояние между элементами */
+  line-height: 0.8;           /* убираем лишние вертикальные интервалы */
+  
+}
+.month-row>span {
+  font-family: "Buda";
+  display: flex;
+  gap: 0.5rem;          /* расстояние между элементами */
+  font-size: 20rem;      /* размер скобок и месяца */
+
+}
+
+.bracket-left,.bracket-right>span {
+  font-family: "Buda";    
+}
+
+.month-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* можно не писать, это значение по умолчанию */
+
+}
+
+
+.all-events-link {
+  font-family:Zapus-Sans;
+  font-size: 1.5rem;      /* мелкий шрифт */
+  text-decoration: none;
+  color: #000000;
+  margin-top: 7rem;
+}
+
+.all-events-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .calendar-section{
 
 background:white;

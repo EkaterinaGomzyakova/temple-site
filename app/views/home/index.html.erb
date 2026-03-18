@@ -63,7 +63,19 @@
 
 <section class="calendar-section">
   <div class="calendar-date-large">
-    <%= @date.strftime("%d") %>
+    <h1 class="day-row"><%= @date.strftime("%d") %></h1>
+    <div class="month-row">
+
+      <span class="bracket-left">(</span>
+
+      <div class="month-info">
+        <span class="month-name"><%= I18n.l(@date, format: '%B').capitalize.upcase %></span>
+        <a href="#" class="all-events-link">Все события →</a>
+      </div>
+
+      <span class="bracket-right">)</span>
+
+    </div>
   </div>
 
   <div class="calendar-week">
@@ -104,6 +116,11 @@
     </div>
   <% end %>
 </section>
+
+
+
+
+
 
 <section class="cultural-space-section">
   <div class="section-content">

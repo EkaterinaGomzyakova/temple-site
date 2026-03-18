@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   def index
     @date = params[:date] ? Date.parse(params[:date]) : Date.current
-    @week_days = (@date.beginning_of_week..@date.end_of_week).to_a
+
+    @week_days = (@date..@date + 6.days).to_a
 
     @club_events = Event.club_event.includes(:club)
     if params[:club].present? && params[:club] != "ВСЕ"
