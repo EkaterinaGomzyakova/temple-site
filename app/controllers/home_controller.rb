@@ -1,7 +1,14 @@
 class HomeController < ApplicationController
   def index
-    @date = params[:date] ? Date.parse(params[:date]) : Date.current
+    @date_current= params[:date] ? Date.parse(params[:date]) : Date.current
 
+    @date = if params[:date]
+          Date.parse(params[:date]).beginning_of_week
+        else
+          Date.current.beginning_of_week
+        end
+
+    # Создаём массив с понедельника по воскресенье
     @week_days = (@date..@date + 6.days).to_a
 
     @club_events = Event.club_event.includes(:club)

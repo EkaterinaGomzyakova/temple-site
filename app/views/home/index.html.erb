@@ -63,13 +63,13 @@
 
 <section class="calendar-section">
   <div class="calendar-date-large">
-    <h1 class="day-row"><%= @date.strftime("%d") %></h1>
+    <h1 class="day-row"><%= @date_current.strftime("%d") %></h1>
     <div class="month-row">
 
       <span class="bracket-left">(</span>
 
       <div class="month-info">
-        <span class="month-name"><%= I18n.l(@date, format: '%B').capitalize.upcase %></span>
+        <span class="month-name"><%= I18n.l(@date_current, format: '%B').capitalize.upcase %></span>
         <a href="#" class="all-events-link">Все события →</a>
       </div>
 
