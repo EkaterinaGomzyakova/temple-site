@@ -61,62 +61,11 @@
 </section>
 
 
-<section class="calendar-section">
-  <div class="calendar-date-large">
-    <h1 class="day-row"><%= @date_current.strftime("%d") %></h1>
-    <div class="month-row">
+<div id="calendar-container">
+  <%= render "calendar" %>
+</div>
 
-      <span class="bracket-left">(</span>
-
-      <div class="month-info">
-        <span class="month-name"><%= I18n.l(@date_current, format: '%B').capitalize.upcase %></span>
-        <a href="#" class="all-events-link">Все события →</a>
-      </div>
-
-      <span class="bracket-right">)</span>
-
-    </div>
-  </div>
-
-  <div class="calendar-week">
-    <% @week_days.each do |day| %>
-      <div class="calendar-day">
-        <div class="day-name"><%= I18n.t("date.abbr_day_names")[day.wday] %></div>
-        <div class="day-number"><%= day.day %></div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="calendar-navigation">
-    <%= link_to "<", home_path(date: @date - 7.days), data: { turbo_frame: "events-frame" }, class: "nav-arrow" %>
-    <%= link_to ">", home_path(date: @date + 7.days), data: { turbo_frame: "events-frame" }, class: "nav-arrow" %>
-  </div>
-
-  <div class="calendar-filters">
-    <% @club_names.each do |club_name| %>
-      <%= link_to club_name.upcase,
-                  home_path(date: @date, club: club_name),
-                  data: { turbo_frame: "events-frame" },
-                  class: "filter-button" %>
-    <% end %>
-  </div>
-
-  <%= turbo_frame_tag "events-frame" do %>
-    <div class="club-events-grid">
-      <% @club_events.each do |event| %>
-        <div class="club-event-card">
-          <% if event.club.image.attached? %>
-            <%= image_tag event.club.image, class: "club-event-image" %>
-          <% end %>
-          <h3 class="club-event-title"><%= event.club.name %></h3>
-          <p class="club-event-desc"><%= event.title %></p>
-          <%= link_to "Подробнее", event_path(event), class: "club-event-link" %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</section>
-
+<%= javascript_include_tag "calendar" if Rails.env.development? %>
 
 
 

@@ -8,3 +8,5 @@ import "@rails/actiontext"
 import "./menu"
 
 import "./cart"
+
+import "calendar"
